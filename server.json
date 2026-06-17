@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.openfate-ai/bazi-mcp",
+  "description": "OpenFate Bazi MCP server with deterministic Four Pillars calculation, True Solar Time correction, branch interactions, and reverse Bazi lookup.",
+  "repository": {
+    "url": "https://github.com/openfate-ai/bazi-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@openfate/bazi-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

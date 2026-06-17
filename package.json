@@ -1,0 +1,70 @@
+{
+  "name": "@openfate/bazi-mcp",
+  "version": "0.1.0",
+  "description": "OpenFate Bazi MCP server with deterministic Four Pillars calculation, True Solar Time, branch interactions, and reverse Bazi lookup.",
+  "type": "module",
+  "bin": {
+    "openfate-bazi-mcp": "./dist/stdio.js"
+  },
+  "main": "./dist/mcp.js",
+  "types": "./dist/mcp.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/mcp.d.ts",
+      "default": "./dist/mcp.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "server.json",
+    "glama.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc && chmod +x dist/stdio.js",
+    "dev": "tsx src/stdio.ts",
+    "smoke": "tsx tests/smoke-stdio.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bazi",
+    "八字",
+    "四柱",
+    "four-pillars",
+    "chinese-astrology",
+    "true-solar-time",
+    "openfate",
+    "saju",
+    "四柱推命"
+  ],
+  "author": {
+    "name": "OpenFate Engineering",
+    "url": "https://openfate.ai"
+  },
+  "homepage": "https://openfate.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openfate-ai/bazi-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openfate-ai/bazi-mcp/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@openfate/bazi-engine": "^1.0.0",
+    "@openfate/true-solar-time": "^4.0.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
