@@ -4,7 +4,7 @@
   "description": "OpenFate Bazi MCP server with deterministic Four Pillars calculation, True Solar Time, branch interactions, and reverse Bazi lookup.",
   "type": "module",
   "bin": {
-    "openfate-bazi-mcp": "./dist/stdio.js"
+    "openfate-bazi-mcp": "dist/stdio.js"
   },
   "main": "./dist/mcp.js",
   "types": "./dist/mcp.d.ts",
