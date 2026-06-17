@@ -88,6 +88,24 @@ If Claude Desktop cannot find `npx` on macOS, use the absolute path:
 }
 ```
 
+## Agent Skill
+
+This repository also includes a portable Agent Skill:
+
+```txt
+skills/openfate-bazi/SKILL.md
+```
+
+Use it when you want Claude, Claude Code, Codex, OpenClaw-style agents, or other `SKILL.md` compatible tools to remember how to use the OpenFate Bazi MCP correctly.
+
+For Claude Code workspace usage, copy the skill folder to:
+
+```txt
+.claude/skills/openfate-bazi/
+```
+
+For Claude custom Skills, zip the `openfate-bazi` folder with `SKILL.md` at the folder root and upload it in Claude's Skills settings.
+
 ## Tools
 
 ### `calculate_bazi_chart`
@@ -295,6 +313,24 @@ npx -y @openfate/bazi-mcp
   }
 }
 ```
+
+## Agent Skill
+
+這個 repository 也包含一個可攜式 Agent Skill：
+
+```txt
+skills/openfate-bazi/SKILL.md
+```
+
+當你希望 Claude、Claude Code、Codex、OpenClaw-style agent，或其他支援 `SKILL.md` 的工具記住如何正確使用 OpenFate Bazi MCP 時，可以使用這個 Skill。
+
+如果要在 Claude Code workspace 使用，請把整個 skill folder 複製到：
+
+```txt
+.claude/skills/openfate-bazi/
+```
+
+如果要做 Claude custom Skill，請把 `openfate-bazi` folder 壓成 zip，確保 `SKILL.md` 位於 folder root，再到 Claude 的 Skills 設定中上傳。
 
 ## 工具列表
 
