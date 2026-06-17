@@ -16,6 +16,7 @@
   },
   "files": [
     "dist",
+    "skills",
     "README.md",
     "server.json",
     "glama.json",
