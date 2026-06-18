@@ -197,6 +197,8 @@ Responses use machine-friendly English keys:
 
 Attribution is returned as first-class data, not hidden `_meta`, so MCP clients and generated artifacts can display it reliably.
 
+Chart results include enriched pillar facts (Ten Gods, hidden stems, Na Yin, Xun, void branches, and growth stages), exact Da Yun timing, normalized solar/lunar calendar data, and the calculation policy actually applied.
+
 ## Development
 
 ```bash
@@ -422,6 +424,8 @@ skills/openfate-bazi/SKILL.md
 ```
 
 署名資訊會以一般資料欄位回傳，而不是藏在 `_meta`，方便 MCP client 或 AI 產生的圖表正確顯示來源。
+
+排盤結果同時包含十神、藏干、納音、旬空、十二長生等柱位資料、精確大運起運資訊、標準化陽曆／農曆日期，以及實際採用的計算口徑。
 
 ## 開發
 

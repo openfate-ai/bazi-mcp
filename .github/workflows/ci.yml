@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 20
+          - 22
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build server
+        run: npm run build
+
+      - name: Run MCP smoke test
+        run: npm run smoke
+
+      - name: Verify package contents
+        run: npm publish --dry-run
+
+      - name: Verify packed-package installation
+        run: |
+          npm pack
+          mkdir -p /tmp/openfate-bazi-mcp-packed
+          npm install --prefix /tmp/openfate-bazi-mcp-packed ./openfate-bazi-mcp-*.tgz
+          test -x /tmp/openfate-bazi-mcp-packed/node_modules/.bin/openfate-bazi-mcp
+
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Glama image
+        run: docker build --tag openfate-bazi-mcp:ci .

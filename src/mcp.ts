@@ -14,7 +14,7 @@ import { calculateTrueSolarTime } from '@openfate/true-solar-time';
 /* Validation */
 import { z } from 'zod';
 
-const SERVER_VERSION = '0.1.0';
+const SERVER_VERSION = '0.2.0';
 const DEFAULT_DAY_BOUNDARY_MODE: DayBoundaryMode = 'ZI_HOUR_23';
 const DEFAULT_REVERSE_START_YEAR = 1900;
 const DEFAULT_REVERSE_LIMIT = 20;

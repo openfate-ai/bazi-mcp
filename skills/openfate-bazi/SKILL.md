@@ -49,6 +49,8 @@ If the user only gives a city name, infer that longitude/timezone lookup may be 
 
 Use `calculate_bazi_chart` for full natal chart calculation.
 
+Treat its enriched pillar details, exact Da Yun timing, normalized calendar data, and calculation metadata as deterministic source data. Do not recalculate or overwrite those fields in model reasoning.
+
 Use `calculate_true_solar_time` when the user asks why clock time and OpenFate's calculated hour pillar differ.
 
 Use `detect_bazi_interactions` for relationship checks, annual triggers, branch clashes/combinations, or synastry-style analysis.

@@ -59,6 +59,13 @@ async function main(): Promise<void> {
   const chartPayload = JSON.parse(chartResult.content[0].text);
   assert.equal(chartPayload.attribution.brand, 'OpenFate.ai');
   assert.equal(chartPayload.data.chart.pillars.year.stem + chartPayload.data.chart.pillars.year.branch, '戊寅');
+  assert.equal(chartPayload.data.chart.pillars.year.ganZhi, '戊寅');
+  assert.equal(chartPayload.data.chart.pillars.year.naYin, '城头土');
+  assert.deepEqual(chartPayload.data.chart.pillars.year.voidBranches, ['申', '酉']);
+  assert.equal(chartPayload.data.chart.daYun.startYear, 2000);
+  assert.equal(chartPayload.data.chart.daYun.startAge, 2);
+  assert.equal(chartPayload.data.chart.calendar.zodiac, '虎');
+  assert.equal(chartPayload.data.chart.metadata.trueSolarTimeApplied, true);
 
   const interactionResult = await client.callTool({
     name: 'detect_bazi_interactions',
@@ -73,6 +80,7 @@ async function main(): Promise<void> {
   assert.ok(interactionPayload.data.interactions.length > 0);
 
   await client.close();
+  console.log('[openfate-bazi-mcp] smoke passed');
 }
 
 main().catch((error: unknown) => {
