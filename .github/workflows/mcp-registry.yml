@@ -1,12 +1,13 @@
-name: Publish to npm
+name: Update MCP Registry
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   publish:
+    if: contains(github.event.head_commit.message, '[registry]')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -15,26 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Upgrade npm
-        run: npm install --global npm@latest
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run MCP verification
-        run: |
-          npm run build
-          npm run smoke
-
-      - name: Publish package
-        run: npm publish --access public
 
       - name: Install MCP publisher
         run: |
