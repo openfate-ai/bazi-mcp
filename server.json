@@ -1,17 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.openfate-ai/bazi-mcp",
+  "title": "OpenFate Bazi MCP",
   "description": "OpenFate Bazi MCP with True Solar Time, Four Pillars, Da Yun, and branch interactions.",
   "repository": {
     "url": "https://github.com/openfate-ai/bazi-mcp",
     "source": "github"
   },
-  "version": "0.2.0",
+  "version": "0.2.3",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@openfate/bazi-mcp",
-      "version": "0.2.0",
+      "version": "0.2.3",
       "transport": {
         "type": "stdio"
       }
