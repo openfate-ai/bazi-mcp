@@ -16,6 +16,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build MCPB bundle
+        run: npm run mcpb:pack
+
       - name: Resolve package version
         id: package
         run: echo "version=$(node --print "require('./package.json').version")" >> "$GITHUB_OUTPUT"
@@ -29,3 +41,6 @@ jobs:
             gh release create "v${VERSION}" \
               --generate-notes \
               --title "v${VERSION} - OpenFate Bazi MCP"
+          gh release upload "v${VERSION}" \
+            "release/openfate-bazi-mcp-v${VERSION}.mcpb" \
+            --clobber

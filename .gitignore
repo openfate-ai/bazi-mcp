@@ -1,5 +1,7 @@
 node_modules/
 dist/
+.mcpb-build/
+release/*.mcpb
 *.tsbuildinfo
 
 .env

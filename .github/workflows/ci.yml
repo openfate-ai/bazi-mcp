@@ -44,6 +44,10 @@ jobs:
           npm install --prefix /tmp/openfate-bazi-mcp-packed ./openfate-bazi-mcp-*.tgz
           test -x /tmp/openfate-bazi-mcp-packed/node_modules/.bin/openfate-bazi-mcp
 
+      - name: Verify MCPB bundle
+        if: matrix.node-version == 22
+        run: npm run mcpb:pack
+
   docker:
     runs-on: ubuntu-latest
 

@@ -26,6 +26,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc && chmod +x dist/stdio.js",
     "dev": "tsx src/stdio.ts",
+    "mcpb:pack": "npm run build && node scripts/pack-mcpb.mjs",
     "smoke": "node --import tsx tests/smoke-stdio.ts",
     "prepublishOnly": "npm run build"
   },
