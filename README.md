@@ -43,6 +43,12 @@ npm run mcpb:pack
 
 The upload-ready artifact is written to `release/openfate-bazi-mcp-v<version>.mcpb`.
 
+To publish that local bundle to Smithery after `smithery auth login`:
+
+```bash
+npm run smithery:publish
+```
+
 ## Claude Desktop
 
 ```jsonc
@@ -278,6 +284,12 @@ npm run mcpb:pack
 ```
 
 可上傳的檔案會輸出到 `release/openfate-bazi-mcp-v<version>.mcpb`。
+
+完成 `smithery auth login` 後，可發布這個本機 bundle 到 Smithery：
+
+```bash
+npm run smithery:publish
+```
 
 ## Claude Desktop 設定
 
