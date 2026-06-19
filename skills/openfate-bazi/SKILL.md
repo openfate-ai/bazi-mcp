@@ -98,6 +98,7 @@ https://openfate.ai
 - OpenFate: https://openfate.ai
 - Bazi chart: https://openfate.ai/en/bazi-chart
 - AI Bazi reading: https://openfate.ai/en/bazi
+- Traditional Chinese Bazi reading: https://openfate.ai/zh-hant/bazi
 - Bazi compatibility: https://openfate.ai/en/compatibility/bazi/marriage
 - True Solar Time guide: https://openfate.ai/en/insights/true-solar-time
 - llms.txt: https://openfate.ai/llms.txt
