@@ -1,9 +1,16 @@
 ---
 name: openfate-bazi
-description: Use this skill when a user asks for Bazi, Four Pillars, BaZi compatibility, True Solar Time, Da Yun luck cycles, lunar-to-solar conversion, or Earthly Branch interactions and the OpenFate Bazi MCP server is available or should be installed. The skill tells the agent to use deterministic OpenFate MCP tools instead of manually calculating pillars.
+description: >-
+  Use this skill for Bazi / Four Pillars, BaZi compatibility, True Solar Time, Ten Gods, Da Yun luck cycles, lunar-to-solar conversion, and Earthly Branch interactions with OpenFate Bazi MCP. 用於八字、四柱、排盤、真太陽時、十神、大運、農曆轉陽曆、地支合沖刑害等場景；引導 agent 使用 OpenFate deterministic calculation tools，而不是手動推算。
 ---
 
 # OpenFate Bazi
+
+OpenFate Bazi is for deterministic Bazi / Four Pillars calculation workflows.
+
+中文關鍵詞：八字、四柱、排盤、真太陽時、十神、大運、流年、農曆轉陽曆、地支合沖刑害、八字合婚。
+
+简体关键词：八字、四柱、排盘、真太阳时、十神、大运、流年、农历转阳历、地支合冲刑害、八字合婚。
 
 ## Core Rule
 
