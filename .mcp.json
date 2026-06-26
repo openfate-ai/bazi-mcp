@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "openfate-bazi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@openfate/bazi-mcp"
+      ]
+    }
+  }
+}
