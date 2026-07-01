@@ -59,7 +59,7 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@openfate/bazi-engine": "^1.1.0",
+    "@openfate/bazi-engine": "^1.1.1",
     "@openfate/true-solar-time": "^4.0.2",
     "zod": "^3.25.76"
   },
