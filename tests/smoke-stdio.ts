@@ -67,6 +67,29 @@ async function main(): Promise<void> {
   assert.equal(chartPayload.data.chart.calendar.zodiac, '虎');
   assert.equal(chartPayload.data.chart.metadata.trueSolarTimeApplied, true);
 
+  // DST civil correction must survive the server boundary (the ...input passthrough) with
+  // True Solar Time disabled — 1988-07-15 15:20 DST=1 is physically 14:20 standard, so the
+  // hour pillar must be 未, not the raw-clock 申. Regression guard for engine >=1.1.1.
+  const dstResult = await client.callTool({
+    name: 'calculate_bazi_chart',
+    arguments: {
+      year: 1988,
+      month: 7,
+      day: 15,
+      hour: 15,
+      minute: 20,
+      gender: 'male',
+      longitude: 116.4,
+      timezone: 8,
+      dstOffset: 1,
+      enableTrueSolarTime: false,
+      dayBoundaryMode: 'ZI_HOUR_23',
+    },
+  }) as ToolCallResult;
+  const dstPayload = JSON.parse(dstResult.content[0].text);
+  assert.equal(dstPayload.data.chart.pillars.hour.branch, '未', 'DST-off dstOffset must shift 15:20→14:20 (未时) through the server');
+  assert.equal(dstPayload.data.chart.metadata.trueSolarTimeApplied, false);
+
   const interactionResult = await client.callTool({
     name: 'detect_bazi_interactions',
     arguments: {
