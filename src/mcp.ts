@@ -14,7 +14,12 @@ import { calculateTrueSolarTime } from '@openfate/true-solar-time';
 /* Validation */
 import { z } from 'zod';
 
-const SERVER_VERSION = '0.2.3';
+/* Node */
+import { createRequire } from 'node:module';
+
+// Read from package.json instead of hardcoding, so the self-reported MCP
+// server version can't drift from the published npm version again.
+const { version: SERVER_VERSION } = createRequire(import.meta.url)('../package.json') as { version: string };
 const DEFAULT_DAY_BOUNDARY_MODE: DayBoundaryMode = 'ZI_HOUR_23';
 const DEFAULT_REVERSE_START_YEAR = 1900;
 const DEFAULT_REVERSE_LIMIT = 20;

@@ -1,6 +1,6 @@
 {
   "name": "@openfate/bazi-mcp",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "mcpName": "io.github.openfate-ai/bazi-mcp",
   "description": "OpenFate Bazi MCP server with deterministic Four Pillars calculation, True Solar Time, branch interactions, and reverse Bazi lookup.",
   "type": "module",
@@ -29,7 +29,8 @@
     "mcpb:pack": "npm run build && node scripts/pack-mcpb.mjs",
     "smithery:publish": "node scripts/publish-smithery.mjs",
     "smoke": "node --import tsx tests/smoke-stdio.ts",
-    "prepublishOnly": "npm run build"
+    "verify:versions": "node scripts/verify-version-sync.mjs",
+    "prepublishOnly": "npm run verify:versions && npm run build"
   },
   "keywords": [
     "mcp",
