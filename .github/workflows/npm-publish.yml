@@ -30,11 +30,12 @@ jobs:
 
       - name: Run MCP verification
         run: |
+          npm run verify:versions
           npm run build
           npm run smoke
 
       - name: Publish package
-        run: npm publish --access public
+        run: npm publish --provenance --access public
 
       - name: Install MCP publisher
         run: |
