@@ -7,12 +7,12 @@
     "url": "https://github.com/openfate-ai/bazi-mcp",
     "source": "github"
   },
-  "version": "0.2.5",
+  "version": "0.2.6",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@openfate/bazi-mcp",
-      "version": "0.2.5",
+      "version": "0.2.6",
       "transport": {
         "type": "stdio"
       }
